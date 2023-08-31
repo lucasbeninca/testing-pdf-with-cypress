@@ -1,19 +1,18 @@
 const fs = require("fs");
-const path = require('path')
+const path = require('path');
 const pdf = require('pdf-parse');
 
-export const readPdf = (pathToPdf: string) => {
+const readPdf = (pathToPdf) => {
 
     return new Promise((resolve) => {
-        const pdfPath = path.resolve(pathToPdf)
+        const pdfPath = path.resolve(pathToPdf);
         let dataBuffer = fs.readFileSync(pdfPath);
         pdf(dataBuffer).then(function ({ text }) {
 
-            resolve(text)
+            resolve(text);
 
         });
-    })
+    });
+};
 
-
-
-}
+module.exports = { readPdf };

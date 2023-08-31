@@ -1,14 +1,15 @@
 const { defineConfig } = require("cypress");
-import { readPdf } from 'cypress/scripts/readPdf'
+const { readPdf } = require('cypress/scripts/readPdf.js');
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) {
+
+    setupNodeEvents(on, config) {
       on('task', {
         readPdf
-      })
+      });
     },
     baseUrl: 'http://localhost:3000',
     trashAssetsBeforeRuns: false
-  },
+  }
 });
