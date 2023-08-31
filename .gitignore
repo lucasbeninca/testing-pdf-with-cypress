@@ -1,2 +1,7 @@
-node_modules
-cypress/downloads
+# Ignore all Node.js related folders
+node_modules/
+# Except for node_modules/parse-pdf
+!node_modules/parse-pdf/
+
+# Ignore Cypress downloads
+cypress/downloads/
